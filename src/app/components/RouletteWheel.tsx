@@ -115,13 +115,22 @@ export default function RouletteWheel({
     if (!spinning) return;
 
     const slotAngle = (2 * Math.PI) / slots.length;
-
-    const targetAngle =
+    const targetFinalAngle =
       -(targetIndex * slotAngle + slotAngle / 2) - Math.PI / 2;
-    const fullSpins = 5 + Math.random() * 3;
-    const totalRotation = fullSpins * 2 * Math.PI + targetAngle;
+
+    const normalizedTarget =
+      ((targetFinalAngle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
 
     const startRotation = rotationRef.current;
+    const currentNormalized =
+      ((startRotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+
+    let delta = normalizedTarget - currentNormalized;
+    if (delta <= 0) delta += 2 * Math.PI;
+
+    const fullSpins = Math.ceil(5 + Math.random() * 3);
+    const totalRotation = startRotation + fullSpins * 2 * Math.PI + delta;
+
     const startTime = performance.now();
     const duration = 4000 + Math.random() * 1000;
 

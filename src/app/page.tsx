@@ -23,7 +23,7 @@ const SLOTS: WheelSlot[] = [
   { label: "Sing Raya Song 🎤", color: "#BF360C", value: null },
   { label: "RM50 JACKPOT", color: "#F9A825", value: 50 },
   { label: "RM2", color: "#388E3C", value: 2 },
-  // { label: "Share w/ Sibling", color: "#4E342E", value: null },
+  { label: "Share w/ Sibling", color: "#4E342E", value: null },
   { label: "RM1", color: "#2E7D32", value: 1 },
   { label: "RM5", color: "#43A047", value: 5 },
 ];
