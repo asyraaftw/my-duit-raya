@@ -116,9 +116,25 @@ a.secondary {
   }
 
   .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+    max-width: 100%;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -1.5px;
+  }
+
+  .intro p {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .ctas {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .ctas a {
+    width: 100%;
   }
 }
 
